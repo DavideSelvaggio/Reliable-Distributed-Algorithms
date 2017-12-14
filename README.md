@@ -21,7 +21,7 @@ The purpose is merely for you to experiment with the zeppelin environment and fa
 Once you have the basic version working, feel free to experiment with different initial state generators, and numbers of generations.
 
 
-
+//begin
 import se.kth.edx.id2203.tutorial.gameoflife._
 import se.kth.edx.id2203.validation._
 import se.kth.edx.id2203.core._
