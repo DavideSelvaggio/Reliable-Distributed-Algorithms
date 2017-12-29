@@ -23,14 +23,14 @@ class BestEffortBroadcast extends Port {
  request[BEB_Broadcast];
 }
 ```
-A _BEB_ component should request BEB_Broadcast and indicate BEB_Deliver events as defined below:
+A __BEB__ component should request BEB_Broadcast and indicate BEB_Deliver events as defined below:
 ```scala
  case class BEB_Deliver(source: Address, payload: KompicsEvent) extends KompicsEvent;
  case class BEB_Broadcast(payload: KompicsEvent) extends KompicsEvent;
 ```
 As you have already learnt from the course lectures, Best-Effort Broadcast should satisfy the following properties:
 
-- _Validity_: If a correct process broadcasts a message m, then every correct process eventually delivers m.
-- _No duplication_: No message is delivered more than once.
-- _No creation_: If a process delivers a message m with sender s, then m was previously broadcast by process s.
+- __Validity__: If a correct process broadcasts a message m, then every correct process eventually delivers m.
+- __No duplication__: No message is delivered more than once.
+- __No creation__: If a process delivers a message m with sender s, then m was previously broadcast by process s.
 HINT: The recommended algorithm to use in this assignment is Basic Broadcast and is described in the following document in the respective lecture.
