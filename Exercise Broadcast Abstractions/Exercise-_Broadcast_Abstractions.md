@@ -35,4 +35,26 @@ As you have already learnt from the course lectures, Best-Effort Broadcast shoul
 - __Validity__: If a correct process broadcasts a message m, then every correct process eventually delivers m.
 - __No duplication__: No message is delivered more than once.
 - __No creation__: If a process delivers a message m with sender s, then m was previously broadcast by process s.
-HINT: The recommended algorithm to use in this assignment is Basic Broadcast and is described in the following document in the respective lecture.
+
+
+# Part II: Reliable Broadcast
+A Reliable Broadcast Abstraction (RB), in Kompics terms, is a component that provides the following port (already imported in the notebook).
+```scala
+class ReliableBroadcast extends Port {
+  indication[RB_Deliver];
+  request[RB_Broadcast];
+}
+```
+An __RB__ component should request RB_Broadcast and indicate RB_Deliver events, as defined below:
+```scala
+case class RB_Deliver(source: Address, payload: KompicsEvent) extends KompicsEvent;
+case class RB_Broadcast(payload: KompicsEvent) extends KompicsEvent;
+```
+As you have already learnt from the course lectures, Reliable Broadcast adds the Agreement property into the already existing properties of Best-Effort Broadcast:
+
+- __Validity__: If a correct process broadcasts a message m, then every correct process eventually delivers m.
+- __No duplication__: No message is delivered more than once.
+- __No creation__: If a process delivers a message m with sender s, then m was previously broadcast by process s.
+-__Agreement__: If a message m is delivered by some correct process, then m is eventually delivered by every correct process.
+
+Mind that, to complete this part, you will first have to implement and test Best-Effort Broadcast, defined above.
