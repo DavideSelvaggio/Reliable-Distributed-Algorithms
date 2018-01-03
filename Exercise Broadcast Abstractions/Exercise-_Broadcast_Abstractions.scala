@@ -70,3 +70,53 @@ class EagerReliableBroadcast(init: Init[EagerReliableBroadcast]) extends Compone
     }
   }
 }
+
+
+//Causal Reliable Broadcast
+
+case class DataMessage(timestamp: VectorClock, payload: KompicsEvent) extends KompicsEvent;
+
+class WaitingCRB(init: Init[WaitingCRB]) extends ComponentDefinition {
+
+  //WaitingCRB Subscriptions
+  val rb = requires[ReliableBroadcast];
+  val crb = provides[CausalOrderReliableBroadcast];
+
+  //WaitingCRB Component State and Initialization
+  val (self, vec) = init match {
+    case Init(s: Address, t: Set[Address]@unchecked) => (s, VectorClock.empty(t.toSeq))
+  };
+
+  //  val V = VectorClock.empty(init match { case Init(_, t: Set[Address]) => t.toSeq })
+  var pending: ListBuffer[(Address, DataMessage)] = ListBuffer();
+  var lsn = 0;
+
+
+  //WaitingCRB Event Handlers
+  crb uponEvent {
+    case x: CRB_Broadcast => handle {
+     var W = VectorClock(vec);
+     W.set(self, lsn);
+     lsn = lsn + 1;
+     trigger(RB_Broadcast((DataMessage(W, x.payload))) -> rb);
+    /* trigger(RB_Broadcast(CRB_Broadcast(DataMessage(W, x.payload))) -> rb); */
+    }
+  }
+
+  rb uponEvent {
+    case x@RB_Deliver(src: Address, msg: DataMessage) => handle {
+    
+    pending += ((src, msg));
+    while(pending.exists { p => p._2.timestamp<=vec }){
+        for (p <- pending) {
+            if (p._2.timestamp<=vec) {
+                val (s,m) = p; 
+                pending -= p;
+                vec.inc(s);
+                trigger(CRB_Deliver(s,m.payload) -> crb);
+                }
+            }
+        }
+    }
+  }
+}
