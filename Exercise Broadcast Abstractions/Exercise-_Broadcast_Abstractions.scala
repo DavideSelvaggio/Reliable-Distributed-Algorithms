@@ -99,24 +99,22 @@ class WaitingCRB(init: Init[WaitingCRB]) extends ComponentDefinition {
      W.set(self, lsn);
      lsn = lsn + 1;
      trigger(RB_Broadcast((DataMessage(W, x.payload))) -> rb);
-    /* trigger(RB_Broadcast(CRB_Broadcast(DataMessage(W, x.payload))) -> rb); */
     }
   }
 
   rb uponEvent {
     case x@RB_Deliver(src: Address, msg: DataMessage) => handle {
-    
-    pending += ((src, msg));
-    while(pending.exists { p => p._2.timestamp<=vec }){
+      pending += ((src, msg));
+      while(pending.exists { p => p._2.timestamp<=vec }){
         for (p <- pending) {
-            if (p._2.timestamp<=vec) {
-                val (s,m) = p; 
-                pending -= p;
-                vec.inc(s);
-                trigger(CRB_Deliver(s,m.payload) -> crb);
-                }
-            }
+         if (p._2.timestamp<=vec) {
+          val (s,m) = p; 
+          pending -= p;
+          vec.inc(s);
+          trigger(CRB_Deliver(s,m.payload) -> crb);
+          }
         }
+      }
     }
   }
 }

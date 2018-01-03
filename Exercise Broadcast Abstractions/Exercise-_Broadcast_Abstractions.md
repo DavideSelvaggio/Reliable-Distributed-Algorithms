@@ -55,7 +55,7 @@ As you have already learnt from the course lectures, Reliable Broadcast adds the
 - Validity: If a correct process broadcasts a message m, then every correct process eventually delivers m.
 - No duplication: No message is delivered more than once.
 - No creation: If a process delivers a message m with sender s, then m was previously broadcast by process s.
--__Agreement__: If a message m is delivered by some correct process, then m is eventually delivered by every correct process.
+- __Agreement__: If a message m is delivered by some correct process, then m is eventually delivered by every correct process.
 
 Mind that, to complete this part, you will first have to implement and test Best-Effort Broadcast, defined above.
 
