@@ -74,11 +74,11 @@ case class CRB_Broadcast(payload: KompicsEvent) extends KompicsEvent;
 ```
 As you have already learnt from the course lectures, Causal-Order Reliable Broadcast adds the Causal Delivery property into the already existing properties of Reliable and Best-Effort Broadcast:
 
-Validity: If a correct process broadcasts a message m, then every correct process eventually delivers m.
-No duplication: No message is delivered more than once.
-No creation: If a process delivers a message m with sender s, then m was previously broadcast by process s.
-Agreement: If a message m is delivered by some correct process, then m is eventually delivered by every correct process.
-__Causal delivery__: For any message m1 that potentially caused a message m2, i.e., m1 → m2, no process delivers m2 unless it has already delivered m1.
+- Validity: If a correct process broadcasts a message m, then every correct process eventually delivers m.
+- No duplication: No message is delivered more than once.
+- No creation: If a process delivers a message m with sender s, then m was previously broadcast by process s.
+- Agreement: If a message m is delivered by some correct process, then m is eventually delivered by every correct process.
+- __Causal delivery__: For any message m1 that potentially caused a message m2, i.e., m1 → m2, no process delivers m2 unless it has already delivered m1.
 
 Also mind, that to complete this part, you will first have to implement and test Best-Effort Broadcast and Reliable Broadcast, defined above.
 
