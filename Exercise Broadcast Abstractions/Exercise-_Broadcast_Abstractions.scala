@@ -53,29 +53,20 @@ class EagerReliableBroadcast(init: Init[EagerReliableBroadcast]) extends Compone
   //EagerReliableBroadcast Event Handlers
   rb uponEvent {
     case x@RB_Broadcast(payload) => handle {
-      /*
-      4: trigger h beb, Broadcast | [Data, self , m] i
-      */
-        /*trigger(BEB_Broadcast(x.payload) -> beb);*/
-        trigger(BEB_Broadcast(RB_Deliver(self, payload)) -> beb);
+
+        trigger(BEB_Broadcast(RB_Broadcast(payload)) -> beb);
     }
   }
 
   beb uponEvent {
     case BEB_Deliver(src, y@RB_Broadcast(payload)) => handle {
     
-    if (!delivered.contains(payload)){
-        delivered += payload;
-        trigger(RB_Deliver(src, payload) -> rb);
-        trigger(BEB_Broadcast(payload) -> beb);
-    }
-     /*       
-      6: if m /∈ delivered then
-      7: delivered := delivered ∪ {m}
-      8: trigger h rb, Deliver | s, m i
-      9: trigger h beb, Broadcast | [Data, s, m] i  
-     */
-     
+    if (!delivered.contains(y.payload)){
+        
+        delivered += y.payload;
+        trigger(RB_Deliver(src, y.payload) -> rb);
+        trigger(BEB_Broadcast(RB_Broadcast(payload)) -> beb);
+      }
     }
   }
 }
