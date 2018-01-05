@@ -19,22 +19,22 @@ Good luck! :)
 ## The N-N Atomic Register ##
 
 A (single) Atomic Register Abstraction (AR), in Kompics terms,  is a component that **provides** the following port *(already imported in the notebook)*.
-
+```scala
      class AtomicRegister extends Port {
        request[AR_Read_Request]
        request[AR_Write_Request]
        indication[AR_Read_Response]
        indication[AR_Write_Response]
      }
-
+```
 
 An **AR** component should request reads (`AR_Read_Request`) or writes (`AR_Write_Request`) and respond with `AR_Read_Response` or `AR_Write_Response` events respectively as defined below:
-
+```scala
      case class AR_Read_Request() extends KompicsEvent
      case class AR_Read_Response(value: Option[Any]) extends KompicsEvent
      case class AR_Write_Request(value: Any) extends KompicsEvent
      case class AR_Write_Response() extends KompicsEvent
-
+```
 
 As you have already learnt from the course lectures, Atomic Registers should be linerarizable and also terminate which we summarize with the following properties:
 
