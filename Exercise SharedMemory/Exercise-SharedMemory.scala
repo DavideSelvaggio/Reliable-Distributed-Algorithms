@@ -26,7 +26,6 @@ import scala.language.implicitConversions
 (1,2) <= (1,4);
 
 
-
 class ReadImposeWriteConsultMajority(init: Init[ReadImposeWriteConsultMajority]) extends ComponentDefinition {
 
   //subscriptions
@@ -56,44 +55,68 @@ class ReadImposeWriteConsultMajority(init: Init[ReadImposeWriteConsultMajority])
   nnar uponEvent {
     case AR_Read_Request() => handle {
       rid = rid + 1;
-      
-        /* WRITE YOUR CODE HERE  */
-     
+      acks = 0;
+      readlist = Map.empty;
+      reading = true;
+      trigger(BEB_Broadcast(READ(rid)) -> beb);
     };
     case AR_Write_Request(wval) => handle { 
       rid = rid + 1;
-         
-        /* WRITE YOUR CODE HERE  */
-     
+      /*writeval = wval;*/
+      writeval = Some(wval);
+      acks = 0;
+      readlist = Map.empty;
+      trigger(BEB_Broadcast(READ(rid)) -> beb);
     }
   }
 
   beb uponEvent {
     case BEB_Deliver(src, READ(readID)) => handle {
-        
-     /* WRITE YOUR CODE HERE  */
-     
+      trigger(PL_Send(src, VALUE(readID, ts, wr, value)) -> pLink);
     }
     case BEB_Deliver(src, w: WRITE) => handle {
-       
-     /* WRITE YOUR CODE HERE  */
-     
+      if ((ts, wr)<(w.ts, w.wr)){
+        /*(ts, wr, value) = (w.ts, w.wr, w.writeVal)*/
+        ts = w.ts;
+        wr = w.wr;
+        value = Some(w.writeVal);
+      }
+      trigger(PL_Send(src, ACK(w.rid)) -> pLink);
     }
   }
 
   pLink uponEvent {
     case PL_Deliver(src, v: VALUE) => handle {
       if (v.rid == rid) {
-         
-      /* WRITE YOUR CODE HERE  */
-     
+        val myVal: Any = v.value.getOrElse(None);
+        readlist(src) <- (v.ts,  v.wr, myVal);
+        if(readlist.count() > n/2){
+          /*todo: check here*/
+          var (maxts, rr) = (0, 0);
+          readval = readval;
+          readlist = Map.empty;
+          if(reading){
+            val bcastval: Option[Any] = readval.getOrElse(None);
+          } else {
+            rr = selfRank;
+            val bcastval: Option[Any] = writeval.getOrElse(None);
+            trigger(BEB_Broadcast(WRITE(rid, maxts, rr, bcastval)) -> beb);
+          }
+        }
       }
     }
     case PL_Deliver(src, v: ACK) => handle {
       if (v.rid == rid) {
-  
-      /* WRITE YOUR CODE HERE  */
-     
+        acks = acks + 1;
+        if(acks > n/2){
+          acks = 0;
+          if (reading){
+            reading = false;
+            trigger(AR_Read_Response(readval) -> nnar);
+          } else {
+            trigger(AR_Write_Response() -> nnar);
+          }
+        }
       }
     }
   }
