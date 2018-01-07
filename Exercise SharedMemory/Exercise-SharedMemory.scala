@@ -59,6 +59,7 @@ class ReadImposeWriteConsultMajority(init: Init[ReadImposeWriteConsultMajority])
       readlist = Map.empty;
       reading = true;
       trigger(BEB_Broadcast(READ(rid)) -> beb);
+      println(s"($self) READ: BEB_Broadcasting -> rid: $rid");
     };
     case AR_Write_Request(wval) => handle { 
       rid = rid + 1;
@@ -67,40 +68,47 @@ class ReadImposeWriteConsultMajority(init: Init[ReadImposeWriteConsultMajority])
       acks = 0;
       readlist = Map.empty;
       trigger(BEB_Broadcast(READ(rid)) -> beb);
+      println(s"($self) WRITE: BEB_Broadcasting -> rid: $rid");
     }
   }
 
   beb uponEvent {
     case BEB_Deliver(src, READ(readID)) => handle {
       trigger(PL_Send(src, VALUE(readID, ts, wr, value)) -> pLink);
+      println(s"($self) Sendind VALUE -> rid: $readID timestamp: $ts wr: $wr value: $value");
     }
     case BEB_Deliver(src, w: WRITE) => handle {
       if ((ts, wr)<(w.ts, w.wr)){
         /*(ts, wr, value) = (w.ts, w.wr, w.writeVal)*/
         ts = w.ts;
         wr = w.wr;
-        value = Some(w.writeVal);
+        value = w.writeVal;
       }
-      trigger(PL_Send(src, ACK(w.rid)) -> pLink);
+      trigger(PL_Send(src, ACK(rid)) -> pLink);
+      println(s"($self) Sendind ACK -> rid: $rid");
     }
   }
 
   pLink uponEvent {
     case PL_Deliver(src, v: VALUE) => handle {
       if (v.rid == rid) {
-        val myVal: Any = v.value.getOrElse(None);
-        readlist(src) <- (v.ts,  v.wr, myVal);
-        if(readlist.count() > n/2){
-          /*todo: check here*/
-          var (maxts, rr) = (0, 0);
-          readval = readval;
+        /*val myVal: Option[Any] = v.value;*/
+        readlist.update(src,(v.ts, v.wr, v.value));
+        if(readlist.size > n/2){
+          println(readlist.values);
+          var maxts = readlist.maxBy(maplist => (maplist._2._1, maplist._2._2))._2._1;
+          var rr= readlist.maxBy(maplist => (maplist._2._1, maplist._2._2))._2._2;
+          readval = readlist.maxBy(maplist => (maplist._2._1, maplist._2._2))._2._3;
+          println(s"$maxts $rr $readval");
           readlist = Map.empty;
           if(reading){
-            val bcastval: Option[Any] = readval.getOrElse(None);
+            val bcastval: Option[Any] = readval;
           } else {
             rr = selfRank;
-            val bcastval: Option[Any] = writeval.getOrElse(None);
+            maxts = maxts + 1;
+            val bcastval: Option[Any] = writeval;
             trigger(BEB_Broadcast(WRITE(rid, maxts, rr, bcastval)) -> beb);
+            println(s"($self) BEB_Broadcast WRITE -> $rid, $maxts, $rr, $bcastval");
           }
         }
       }
@@ -108,13 +116,17 @@ class ReadImposeWriteConsultMajority(init: Init[ReadImposeWriteConsultMajority])
     case PL_Deliver(src, v: ACK) => handle {
       if (v.rid == rid) {
         acks = acks + 1;
+        println(s"($self) acks: $acks");
+        println(s"($self) reading: $reading");
         if(acks > n/2){
           acks = 0;
           if (reading){
             reading = false;
             trigger(AR_Read_Response(readval) -> nnar);
+            println(s"($self) AR_Read_Response  -> $readval");
           } else {
             trigger(AR_Write_Response() -> nnar);
+            println(s"($self) AR_Write_Response");
           }
         }
       }
