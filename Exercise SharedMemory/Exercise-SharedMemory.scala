@@ -26,6 +26,7 @@ import scala.language.implicitConversions
 (1,2) <= (1,4);
 
 
+
 class ReadImposeWriteConsultMajority(init: Init[ReadImposeWriteConsultMajority]) extends ComponentDefinition {
 
   //subscriptions
@@ -58,8 +59,8 @@ class ReadImposeWriteConsultMajority(init: Init[ReadImposeWriteConsultMajority])
       acks = 0;
       readlist = Map.empty;
       reading = true;
+      println(s"($self) READ: BEB_Broadcasting -> rid: $rid reading: $reading");
       trigger(BEB_Broadcast(READ(rid)) -> beb);
-      println(s"($self) READ: BEB_Broadcasting -> rid: $rid");
     };
     case AR_Write_Request(wval) => handle { 
       rid = rid + 1;
@@ -75,7 +76,7 @@ class ReadImposeWriteConsultMajority(init: Init[ReadImposeWriteConsultMajority])
   beb uponEvent {
     case BEB_Deliver(src, READ(readID)) => handle {
       trigger(PL_Send(src, VALUE(readID, ts, wr, value)) -> pLink);
-      println(s"($self) Sendind VALUE -> rid: $readID timestamp: $ts wr: $wr value: $value");
+      println(s"($self) Sendind VALUE form $src -> rid: $readID timestamp: $ts wr: $wr value: $value");
     }
     case BEB_Deliver(src, w: WRITE) => handle {
       if ((ts, wr)<(w.ts, w.wr)){
@@ -84,13 +85,14 @@ class ReadImposeWriteConsultMajority(init: Init[ReadImposeWriteConsultMajority])
         wr = w.wr;
         value = w.writeVal;
       }
-      trigger(PL_Send(src, ACK(rid)) -> pLink);
-      println(s"($self) Sendind ACK -> rid: $rid");
+      trigger(PL_Send(src, ACK(w.rid)) -> pLink);
+      println(s"($self) Sendind ACK form $src -> rid: $rid");
     }
   }
 
   pLink uponEvent {
     case PL_Deliver(src, v: VALUE) => handle {
+    println(s"($self) PL_Deliver VALUE form  $src with acks: $acks and reading: $reading");
       if (v.rid == rid) {
         /*val myVal: Option[Any] = v.value;*/
         readlist.update(src,(v.ts, v.wr, v.value));
@@ -114,6 +116,7 @@ class ReadImposeWriteConsultMajority(init: Init[ReadImposeWriteConsultMajority])
       }
     }
     case PL_Deliver(src, v: ACK) => handle {
+    println(s"($self) PL_Deliver ACK from  $src with acks: $acks and reading: $reading");
       if (v.rid == rid) {
         acks = acks + 1;
         println(s"($self) acks: $acks");
