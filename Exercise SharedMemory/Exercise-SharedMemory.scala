@@ -27,6 +27,7 @@ import scala.language.implicitConversions
 
 
 
+
 class ReadImposeWriteConsultMajority(init: Init[ReadImposeWriteConsultMajority]) extends ComponentDefinition {
 
   //subscriptions
@@ -103,15 +104,16 @@ class ReadImposeWriteConsultMajority(init: Init[ReadImposeWriteConsultMajority])
           readval = readlist.maxBy(maplist => (maplist._2._1, maplist._2._2))._2._3;
           println(s"$maxts $rr $readval");
           readlist = Map.empty;
+          var bcastval: Option[Any] = None;
           if(reading){
-            val bcastval: Option[Any] = readval;
+            bcastval = readval;
           } else {
             rr = selfRank;
             maxts = maxts + 1;
-            val bcastval: Option[Any] = writeval;
-            trigger(BEB_Broadcast(WRITE(rid, maxts, rr, bcastval)) -> beb);
-            println(s"($self) BEB_Broadcast WRITE -> $rid, $maxts, $rr, $bcastval");
+            bcastval = writeval;
           }
+          trigger(BEB_Broadcast(WRITE(rid, maxts, rr, bcastval)) -> beb);
+          println(s"($self) BEB_Broadcast WRITE -> $rid, $maxts, $rr, $bcastval");
         }
       }
     }

@@ -1,0 +1,429 @@
+SLF4J: Class path contains multiple SLF4J bindings.
+SLF4J: Found binding in [jar:file:/usr/zeppelin/interpreter/kompics/slf4j-log4j12-1.7.10.jar!/org/slf4j/impl/StaticLoggerBinder.class]
+SLF4J: Found binding in [jar:file:/usr/zeppelin/zeppelin-interpreter/target/lib/slf4j-log4j12-1.7.10.jar!/org/slf4j/impl/StaticLoggerBinder.class]
+SLF4J: See http://www.slf4j.org/codes.html#multiple_bindings for an explanation.
+SLF4J: Actual binding is of type [org.slf4j.impl.Log4jLoggerFactory]
+(TAddress(/192.168.2.1:1000)) WRITE: BEB_Broadcasting -> rid: 1
+(TAddress(/192.168.2.5:1000)) READ: BEB_Broadcasting -> rid: 1 reading: true
+(TAddress(/192.168.2.3:1000)) Sendind VALUE form TAddress(/192.168.2.1:1000) -> rid: 1 timestamp: 0 wr: 0 value: None
+(TAddress(/192.168.2.1:1000)) Sendind VALUE form TAddress(/192.168.2.1:1000) -> rid: 1 timestamp: 0 wr: 0 value: None
+(TAddress(/192.168.2.8:1000)) Sendind VALUE form TAddress(/192.168.2.1:1000) -> rid: 1 timestamp: 0 wr: 0 value: None
+(TAddress(/192.168.2.5:1000)) Sendind VALUE form TAddress(/192.168.2.1:1000) -> rid: 1 timestamp: 0 wr: 0 value: None
+(TAddress(/192.168.2.6:1000)) Sendind VALUE form TAddress(/192.168.2.1:1000) -> rid: 1 timestamp: 0 wr: 0 value: None
+(TAddress(/192.168.2.4:1000)) Sendind VALUE form TAddress(/192.168.2.1:1000) -> rid: 1 timestamp: 0 wr: 0 value: None
+(TAddress(/192.168.2.2:1000)) Sendind VALUE form TAddress(/192.168.2.1:1000) -> rid: 1 timestamp: 0 wr: 0 value: None
+(TAddress(/192.168.2.7:1000)) Sendind VALUE form TAddress(/192.168.2.1:1000) -> rid: 1 timestamp: 0 wr: 0 value: None
+(TAddress(/192.168.2.3:1000)) Sendind VALUE form TAddress(/192.168.2.5:1000) -> rid: 1 timestamp: 0 wr: 0 value: None
+(TAddress(/192.168.2.1:1000)) Sendind VALUE form TAddress(/192.168.2.5:1000) -> rid: 1 timestamp: 0 wr: 0 value: None
+(TAddress(/192.168.2.8:1000)) Sendind VALUE form TAddress(/192.168.2.5:1000) -> rid: 1 timestamp: 0 wr: 0 value: None
+(TAddress(/192.168.2.5:1000)) Sendind VALUE form TAddress(/192.168.2.5:1000) -> rid: 1 timestamp: 0 wr: 0 value: None
+(TAddress(/192.168.2.6:1000)) Sendind VALUE form TAddress(/192.168.2.5:1000) -> rid: 1 timestamp: 0 wr: 0 value: None
+(TAddress(/192.168.2.4:1000)) Sendind VALUE form TAddress(/192.168.2.5:1000) -> rid: 1 timestamp: 0 wr: 0 value: None
+(TAddress(/192.168.2.2:1000)) Sendind VALUE form TAddress(/192.168.2.5:1000) -> rid: 1 timestamp: 0 wr: 0 value: None
+(TAddress(/192.168.2.7:1000)) Sendind VALUE form TAddress(/192.168.2.5:1000) -> rid: 1 timestamp: 0 wr: 0 value: None
+(TAddress(/192.168.2.2:1000)) WRITE: BEB_Broadcasting -> rid: 1
+(TAddress(/192.168.2.1:1000)) PL_Deliver VALUE form  TAddress(/192.168.2.3:1000) with acks: 0 and reading: false
+(TAddress(/192.168.2.1:1000)) PL_Deliver VALUE form  TAddress(/192.168.2.1:1000) with acks: 0 and reading: false
+(TAddress(/192.168.2.1:1000)) PL_Deliver VALUE form  TAddress(/192.168.2.8:1000) with acks: 0 and reading: false
+(TAddress(/192.168.2.1:1000)) PL_Deliver VALUE form  TAddress(/192.168.2.5:1000) with acks: 0 and reading: false
+(TAddress(/192.168.2.1:1000)) PL_Deliver VALUE form  TAddress(/192.168.2.6:1000) with acks: 0 and reading: false
+HashMap((0,0,None), (0,0,None), (0,0,None), (0,0,None), (0,0,None))
+0 0 None
+(TAddress(/192.168.2.1:1000)) BEB_Broadcast WRITE -> 1, 1, 1, Some(247983444)
+(TAddress(/192.168.2.1:1000)) PL_Deliver VALUE form  TAddress(/192.168.2.4:1000) with acks: 0 and reading: false
+(TAddress(/192.168.2.1:1000)) PL_Deliver VALUE form  TAddress(/192.168.2.2:1000) with acks: 0 and reading: false
+(TAddress(/192.168.2.1:1000)) PL_Deliver VALUE form  TAddress(/192.168.2.7:1000) with acks: 0 and reading: false
+(TAddress(/192.168.2.6:1000)) READ: BEB_Broadcasting -> rid: 1 reading: true
+(TAddress(/192.168.2.5:1000)) PL_Deliver VALUE form  TAddress(/192.168.2.3:1000) with acks: 0 and reading: true
+(TAddress(/192.168.2.5:1000)) PL_Deliver VALUE form  TAddress(/192.168.2.1:1000) with acks: 0 and reading: true
+(TAddress(/192.168.2.5:1000)) PL_Deliver VALUE form  TAddress(/192.168.2.8:1000) with acks: 0 and reading: true
+(TAddress(/192.168.2.5:1000)) PL_Deliver VALUE form  TAddress(/192.168.2.5:1000) with acks: 0 and reading: true
+(TAddress(/192.168.2.5:1000)) PL_Deliver VALUE form  TAddress(/192.168.2.6:1000) with acks: 0 and reading: true
+HashMap((0,0,None), (0,0,None), (0,0,None), (0,0,None), (0,0,None))
+0 0 None
+(TAddress(/192.168.2.5:1000)) BEB_Broadcast WRITE -> 1, 0, 0, None
+(TAddress(/192.168.2.5:1000)) PL_Deliver VALUE form  TAddress(/192.168.2.4:1000) with acks: 0 and reading: true
+(TAddress(/192.168.2.5:1000)) PL_Deliver VALUE form  TAddress(/192.168.2.2:1000) with acks: 0 and reading: true
+(TAddress(/192.168.2.5:1000)) PL_Deliver VALUE form  TAddress(/192.168.2.7:1000) with acks: 0 and reading: true
+(TAddress(/192.168.2.3:1000)) Sendind VALUE form TAddress(/192.168.2.2:1000) -> rid: 1 timestamp: 0 wr: 0 value: None
+(TAddress(/192.168.2.1:1000)) Sendind VALUE form TAddress(/192.168.2.2:1000) -> rid: 1 timestamp: 0 wr: 0 value: None
+(TAddress(/192.168.2.8:1000)) Sendind VALUE form TAddress(/192.168.2.2:1000) -> rid: 1 timestamp: 0 wr: 0 value: None
+(TAddress(/192.168.2.5:1000)) Sendind VALUE form TAddress(/192.168.2.2:1000) -> rid: 1 timestamp: 0 wr: 0 value: None
+(TAddress(/192.168.2.6:1000)) Sendind VALUE form TAddress(/192.168.2.2:1000) -> rid: 1 timestamp: 0 wr: 0 value: None
+(TAddress(/192.168.2.4:1000)) Sendind VALUE form TAddress(/192.168.2.2:1000) -> rid: 1 timestamp: 0 wr: 0 value: None
+(TAddress(/192.168.2.2:1000)) Sendind VALUE form TAddress(/192.168.2.2:1000) -> rid: 1 timestamp: 0 wr: 0 value: None
+(TAddress(/192.168.2.7:1000)) Sendind VALUE form TAddress(/192.168.2.2:1000) -> rid: 1 timestamp: 0 wr: 0 value: None
+(TAddress(/192.168.2.3:1000)) Sendind ACK form TAddress(/192.168.2.1:1000) -> rid: 0
+(TAddress(/192.168.2.1:1000)) Sendind ACK form TAddress(/192.168.2.1:1000) -> rid: 1
+(TAddress(/192.168.2.8:1000)) Sendind ACK form TAddress(/192.168.2.1:1000) -> rid: 0
+(TAddress(/192.168.2.5:1000)) Sendind ACK form TAddress(/192.168.2.1:1000) -> rid: 1
+(TAddress(/192.168.2.6:1000)) Sendind ACK form TAddress(/192.168.2.1:1000) -> rid: 1
+(TAddress(/192.168.2.4:1000)) Sendind ACK form TAddress(/192.168.2.1:1000) -> rid: 0
+(TAddress(/192.168.2.2:1000)) Sendind ACK form TAddress(/192.168.2.1:1000) -> rid: 1
+(TAddress(/192.168.2.7:1000)) Sendind ACK form TAddress(/192.168.2.1:1000) -> rid: 0
+(TAddress(/192.168.2.3:1000)) Sendind VALUE form TAddress(/192.168.2.6:1000) -> rid: 1 timestamp: 1 wr: 1 value: Some(247983444)
+(TAddress(/192.168.2.1:1000)) Sendind VALUE form TAddress(/192.168.2.6:1000) -> rid: 1 timestamp: 1 wr: 1 value: Some(247983444)
+(TAddress(/192.168.2.8:1000)) Sendind VALUE form TAddress(/192.168.2.6:1000) -> rid: 1 timestamp: 1 wr: 1 value: Some(247983444)
+(TAddress(/192.168.2.5:1000)) Sendind VALUE form TAddress(/192.168.2.6:1000) -> rid: 1 timestamp: 1 wr: 1 value: Some(247983444)
+(TAddress(/192.168.2.6:1000)) Sendind VALUE form TAddress(/192.168.2.6:1000) -> rid: 1 timestamp: 1 wr: 1 value: Some(247983444)
+(TAddress(/192.168.2.4:1000)) Sendind VALUE form TAddress(/192.168.2.6:1000) -> rid: 1 timestamp: 1 wr: 1 value: Some(247983444)
+(TAddress(/192.168.2.2:1000)) Sendind VALUE form TAddress(/192.168.2.6:1000) -> rid: 1 timestamp: 1 wr: 1 value: Some(247983444)
+(TAddress(/192.168.2.7:1000)) Sendind VALUE form TAddress(/192.168.2.6:1000) -> rid: 1 timestamp: 1 wr: 1 value: Some(247983444)
+(TAddress(/192.168.2.3:1000)) Sendind ACK form TAddress(/192.168.2.5:1000) -> rid: 0
+(TAddress(/192.168.2.1:1000)) Sendind ACK form TAddress(/192.168.2.5:1000) -> rid: 1
+(TAddress(/192.168.2.8:1000)) Sendind ACK form TAddress(/192.168.2.5:1000) -> rid: 0
+(TAddress(/192.168.2.5:1000)) Sendind ACK form TAddress(/192.168.2.5:1000) -> rid: 1
+(TAddress(/192.168.2.6:1000)) Sendind ACK form TAddress(/192.168.2.5:1000) -> rid: 1
+(TAddress(/192.168.2.4:1000)) Sendind ACK form TAddress(/192.168.2.5:1000) -> rid: 0
+(TAddress(/192.168.2.2:1000)) Sendind ACK form TAddress(/192.168.2.5:1000) -> rid: 1
+(TAddress(/192.168.2.7:1000)) Sendind ACK form TAddress(/192.168.2.5:1000) -> rid: 0
+(TAddress(/192.168.2.3:1000)) WRITE: BEB_Broadcasting -> rid: 1
+(TAddress(/192.168.2.2:1000)) PL_Deliver VALUE form  TAddress(/192.168.2.3:1000) with acks: 0 and reading: false
+(TAddress(/192.168.2.1:1000)) PL_Deliver ACK from  TAddress(/192.168.2.3:1000) with acks: 0 and reading: false
+(TAddress(/192.168.2.1:1000)) acks: 1
+(TAddress(/192.168.2.1:1000)) reading: false
+(TAddress(/192.168.2.2:1000)) PL_Deliver VALUE form  TAddress(/192.168.2.1:1000) with acks: 0 and reading: false
+(TAddress(/192.168.2.1:1000)) PL_Deliver ACK from  TAddress(/192.168.2.1:1000) with acks: 1 and reading: false
+(TAddress(/192.168.2.1:1000)) acks: 2
+(TAddress(/192.168.2.1:1000)) reading: false
+(TAddress(/192.168.2.2:1000)) PL_Deliver VALUE form  TAddress(/192.168.2.8:1000) with acks: 0 and reading: false
+(TAddress(/192.168.2.1:1000)) PL_Deliver ACK from  TAddress(/192.168.2.8:1000) with acks: 2 and reading: false
+(TAddress(/192.168.2.1:1000)) acks: 3
+(TAddress(/192.168.2.1:1000)) reading: false
+(TAddress(/192.168.2.2:1000)) PL_Deliver VALUE form  TAddress(/192.168.2.5:1000) with acks: 0 and reading: false
+(TAddress(/192.168.2.1:1000)) PL_Deliver ACK from  TAddress(/192.168.2.5:1000) with acks: 3 and reading: false
+(TAddress(/192.168.2.1:1000)) acks: 4
+(TAddress(/192.168.2.1:1000)) reading: false
+(TAddress(/192.168.2.2:1000)) PL_Deliver VALUE form  TAddress(/192.168.2.6:1000) with acks: 0 and reading: false
+HashMap((0,0,None), (0,0,None), (0,0,None), (0,0,None), (0,0,None))
+0 0 None
+(TAddress(/192.168.2.2:1000)) BEB_Broadcast WRITE -> 1, 1, 2, Some(-1038318701)
+(TAddress(/192.168.2.1:1000)) PL_Deliver ACK from  TAddress(/192.168.2.6:1000) with acks: 4 and reading: false
+(TAddress(/192.168.2.1:1000)) acks: 5
+(TAddress(/192.168.2.1:1000)) reading: false
+(TAddress(/192.168.2.1:1000)) AR_Write_Response
+(TAddress(/192.168.2.2:1000)) PL_Deliver VALUE form  TAddress(/192.168.2.4:1000) with acks: 0 and reading: false
+(TAddress(/192.168.2.1:1000)) PL_Deliver ACK from  TAddress(/192.168.2.4:1000) with acks: 0 and reading: false
+(TAddress(/192.168.2.1:1000)) acks: 1
+(TAddress(/192.168.2.1:1000)) reading: false
+(TAddress(/192.168.2.2:1000)) PL_Deliver VALUE form  TAddress(/192.168.2.2:1000) with acks: 0 and reading: false
+(TAddress(/192.168.2.1:1000)) PL_Deliver ACK from  TAddress(/192.168.2.2:1000) with acks: 1 and reading: false
+(TAddress(/192.168.2.1:1000)) acks: 2
+(TAddress(/192.168.2.1:1000)) reading: false
+(TAddress(/192.168.2.2:1000)) PL_Deliver VALUE form  TAddress(/192.168.2.7:1000) with acks: 0 and reading: false
+(TAddress(/192.168.2.1:1000)) PL_Deliver ACK from  TAddress(/192.168.2.7:1000) with acks: 2 and reading: false
+(TAddress(/192.168.2.1:1000)) acks: 3
+(TAddress(/192.168.2.1:1000)) reading: false
+(TAddress(/192.168.2.7:1000)) READ: BEB_Broadcasting -> rid: 1 reading: true
+(TAddress(/192.168.2.6:1000)) PL_Deliver VALUE form  TAddress(/192.168.2.3:1000) with acks: 0 and reading: true
+(TAddress(/192.168.2.5:1000)) PL_Deliver ACK from  TAddress(/192.168.2.3:1000) with acks: 0 and reading: true
+(TAddress(/192.168.2.5:1000)) acks: 1
+(TAddress(/192.168.2.5:1000)) reading: true
+(TAddress(/192.168.2.6:1000)) PL_Deliver VALUE form  TAddress(/192.168.2.1:1000) with acks: 0 and reading: true
+(TAddress(/192.168.2.5:1000)) PL_Deliver ACK from  TAddress(/192.168.2.1:1000) with acks: 1 and reading: true
+(TAddress(/192.168.2.5:1000)) acks: 2
+(TAddress(/192.168.2.5:1000)) reading: true
+(TAddress(/192.168.2.6:1000)) PL_Deliver VALUE form  TAddress(/192.168.2.8:1000) with acks: 0 and reading: true
+(TAddress(/192.168.2.5:1000)) PL_Deliver ACK from  TAddress(/192.168.2.8:1000) with acks: 2 and reading: true
+(TAddress(/192.168.2.5:1000)) acks: 3
+(TAddress(/192.168.2.5:1000)) reading: true
+(TAddress(/192.168.2.6:1000)) PL_Deliver VALUE form  TAddress(/192.168.2.5:1000) with acks: 0 and reading: true
+(TAddress(/192.168.2.5:1000)) PL_Deliver ACK from  TAddress(/192.168.2.5:1000) with acks: 3 and reading: true
+(TAddress(/192.168.2.5:1000)) acks: 4
+(TAddress(/192.168.2.5:1000)) reading: true
+(TAddress(/192.168.2.6:1000)) PL_Deliver VALUE form  TAddress(/192.168.2.6:1000) with acks: 0 and reading: true
+HashMap((1,1,Some(247983444)), (1,1,Some(247983444)), (1,1,Some(247983444)), (1,1,Some(247983444)), (1,1,Some(247983444)))
+1 1 Some(247983444)
+(TAddress(/192.168.2.6:1000)) BEB_Broadcast WRITE -> 1, 1, 1, Some(247983444)
+(TAddress(/192.168.2.5:1000)) PL_Deliver ACK from  TAddress(/192.168.2.6:1000) with acks: 4 and reading: true
+(TAddress(/192.168.2.5:1000)) acks: 5
+(TAddress(/192.168.2.5:1000)) reading: true
+(TAddress(/192.168.2.5:1000)) AR_Read_Response  -> None
+(TAddress(/192.168.2.6:1000)) PL_Deliver VALUE form  TAddress(/192.168.2.4:1000) with acks: 0 and reading: true
+(TAddress(/192.168.2.5:1000)) PL_Deliver ACK from  TAddress(/192.168.2.4:1000) with acks: 0 and reading: false
+(TAddress(/192.168.2.5:1000)) acks: 1
+(TAddress(/192.168.2.5:1000)) reading: false
+(TAddress(/192.168.2.6:1000)) PL_Deliver VALUE form  TAddress(/192.168.2.2:1000) with acks: 0 and reading: true
+(TAddress(/192.168.2.5:1000)) PL_Deliver ACK from  TAddress(/192.168.2.2:1000) with acks: 1 and reading: false
+(TAddress(/192.168.2.5:1000)) acks: 2
+(TAddress(/192.168.2.5:1000)) reading: false
+(TAddress(/192.168.2.6:1000)) PL_Deliver VALUE form  TAddress(/192.168.2.7:1000) with acks: 0 and reading: true
+(TAddress(/192.168.2.5:1000)) PL_Deliver ACK from  TAddress(/192.168.2.7:1000) with acks: 2 and reading: false
+(TAddress(/192.168.2.5:1000)) acks: 3
+(TAddress(/192.168.2.5:1000)) reading: false
+(TAddress(/192.168.2.3:1000)) Sendind VALUE form TAddress(/192.168.2.3:1000) -> rid: 1 timestamp: 1 wr: 1 value: Some(247983444)
+(TAddress(/192.168.2.1:1000)) Sendind VALUE form TAddress(/192.168.2.3:1000) -> rid: 1 timestamp: 1 wr: 1 value: Some(247983444)
+(TAddress(/192.168.2.8:1000)) Sendind VALUE form TAddress(/192.168.2.3:1000) -> rid: 1 timestamp: 1 wr: 1 value: Some(247983444)
+(TAddress(/192.168.2.5:1000)) Sendind VALUE form TAddress(/192.168.2.3:1000) -> rid: 1 timestamp: 1 wr: 1 value: Some(247983444)
+(TAddress(/192.168.2.6:1000)) Sendind VALUE form TAddress(/192.168.2.3:1000) -> rid: 1 timestamp: 1 wr: 1 value: Some(247983444)
+(TAddress(/192.168.2.4:1000)) Sendind VALUE form TAddress(/192.168.2.3:1000) -> rid: 1 timestamp: 1 wr: 1 value: Some(247983444)
+(TAddress(/192.168.2.2:1000)) Sendind VALUE form TAddress(/192.168.2.3:1000) -> rid: 1 timestamp: 1 wr: 1 value: Some(247983444)
+(TAddress(/192.168.2.7:1000)) Sendind VALUE form TAddress(/192.168.2.3:1000) -> rid: 1 timestamp: 1 wr: 1 value: Some(247983444)
+(TAddress(/192.168.2.3:1000)) Sendind ACK form TAddress(/192.168.2.2:1000) -> rid: 1
+(TAddress(/192.168.2.1:1000)) Sendind ACK form TAddress(/192.168.2.2:1000) -> rid: 1
+(TAddress(/192.168.2.8:1000)) Sendind ACK form TAddress(/192.168.2.2:1000) -> rid: 0
+(TAddress(/192.168.2.5:1000)) Sendind ACK form TAddress(/192.168.2.2:1000) -> rid: 1
+(TAddress(/192.168.2.6:1000)) Sendind ACK form TAddress(/192.168.2.2:1000) -> rid: 1
+(TAddress(/192.168.2.4:1000)) Sendind ACK form TAddress(/192.168.2.2:1000) -> rid: 0
+(TAddress(/192.168.2.2:1000)) Sendind ACK form TAddress(/192.168.2.2:1000) -> rid: 1
+(TAddress(/192.168.2.7:1000)) Sendind ACK form TAddress(/192.168.2.2:1000) -> rid: 1
+(TAddress(/192.168.2.3:1000)) Sendind VALUE form TAddress(/192.168.2.7:1000) -> rid: 1 timestamp: 1 wr: 2 value: Some(-1038318701)
+(TAddress(/192.168.2.1:1000)) Sendind VALUE form TAddress(/192.168.2.7:1000) -> rid: 1 timestamp: 1 wr: 2 value: Some(-1038318701)
+(TAddress(/192.168.2.8:1000)) Sendind VALUE form TAddress(/192.168.2.7:1000) -> rid: 1 timestamp: 1 wr: 2 value: Some(-1038318701)
+(TAddress(/192.168.2.5:1000)) Sendind VALUE form TAddress(/192.168.2.7:1000) -> rid: 1 timestamp: 1 wr: 2 value: Some(-1038318701)
+(TAddress(/192.168.2.6:1000)) Sendind VALUE form TAddress(/192.168.2.7:1000) -> rid: 1 timestamp: 1 wr: 2 value: Some(-1038318701)
+(TAddress(/192.168.2.4:1000)) Sendind VALUE form TAddress(/192.168.2.7:1000) -> rid: 1 timestamp: 1 wr: 2 value: Some(-1038318701)
+(TAddress(/192.168.2.2:1000)) Sendind VALUE form TAddress(/192.168.2.7:1000) -> rid: 1 timestamp: 1 wr: 2 value: Some(-1038318701)
+(TAddress(/192.168.2.7:1000)) Sendind VALUE form TAddress(/192.168.2.7:1000) -> rid: 1 timestamp: 1 wr: 2 value: Some(-1038318701)
+(TAddress(/192.168.2.3:1000)) Sendind ACK form TAddress(/192.168.2.6:1000) -> rid: 1
+(TAddress(/192.168.2.1:1000)) Sendind ACK form TAddress(/192.168.2.6:1000) -> rid: 1
+(TAddress(/192.168.2.8:1000)) Sendind ACK form TAddress(/192.168.2.6:1000) -> rid: 0
+(TAddress(/192.168.2.5:1000)) Sendind ACK form TAddress(/192.168.2.6:1000) -> rid: 1
+(TAddress(/192.168.2.6:1000)) Sendind ACK form TAddress(/192.168.2.6:1000) -> rid: 1
+(TAddress(/192.168.2.4:1000)) Sendind ACK form TAddress(/192.168.2.6:1000) -> rid: 0
+(TAddress(/192.168.2.2:1000)) Sendind ACK form TAddress(/192.168.2.6:1000) -> rid: 1
+(TAddress(/192.168.2.7:1000)) Sendind ACK form TAddress(/192.168.2.6:1000) -> rid: 1
+(TAddress(/192.168.2.4:1000)) WRITE: BEB_Broadcasting -> rid: 1
+(TAddress(/192.168.2.3:1000)) PL_Deliver VALUE form  TAddress(/192.168.2.3:1000) with acks: 0 and reading: false
+(TAddress(/192.168.2.2:1000)) PL_Deliver ACK from  TAddress(/192.168.2.3:1000) with acks: 0 and reading: false
+(TAddress(/192.168.2.2:1000)) acks: 1
+(TAddress(/192.168.2.2:1000)) reading: false
+(TAddress(/192.168.2.3:1000)) PL_Deliver VALUE form  TAddress(/192.168.2.1:1000) with acks: 0 and reading: false
+(TAddress(/192.168.2.2:1000)) PL_Deliver ACK from  TAddress(/192.168.2.1:1000) with acks: 1 and reading: false
+(TAddress(/192.168.2.2:1000)) acks: 2
+(TAddress(/192.168.2.2:1000)) reading: false
+(TAddress(/192.168.2.3:1000)) PL_Deliver VALUE form  TAddress(/192.168.2.8:1000) with acks: 0 and reading: false
+(TAddress(/192.168.2.2:1000)) PL_Deliver ACK from  TAddress(/192.168.2.8:1000) with acks: 2 and reading: false
+(TAddress(/192.168.2.2:1000)) acks: 3
+(TAddress(/192.168.2.2:1000)) reading: false
+(TAddress(/192.168.2.3:1000)) PL_Deliver VALUE form  TAddress(/192.168.2.5:1000) with acks: 0 and reading: false
+(TAddress(/192.168.2.2:1000)) PL_Deliver ACK from  TAddress(/192.168.2.5:1000) with acks: 3 and reading: false
+(TAddress(/192.168.2.2:1000)) acks: 4
+(TAddress(/192.168.2.2:1000)) reading: false
+(TAddress(/192.168.2.3:1000)) PL_Deliver VALUE form  TAddress(/192.168.2.6:1000) with acks: 0 and reading: false
+HashMap((1,1,Some(247983444)), (1,1,Some(247983444)), (1,1,Some(247983444)), (1,1,Some(247983444)), (1,1,Some(247983444)))
+1 1 Some(247983444)
+(TAddress(/192.168.2.3:1000)) BEB_Broadcast WRITE -> 1, 2, 3, Some(-988758023)
+(TAddress(/192.168.2.2:1000)) PL_Deliver ACK from  TAddress(/192.168.2.6:1000) with acks: 4 and reading: false
+(TAddress(/192.168.2.2:1000)) acks: 5
+(TAddress(/192.168.2.2:1000)) reading: false
+(TAddress(/192.168.2.2:1000)) AR_Write_Response
+(TAddress(/192.168.2.3:1000)) PL_Deliver VALUE form  TAddress(/192.168.2.4:1000) with acks: 0 and reading: false
+(TAddress(/192.168.2.2:1000)) PL_Deliver ACK from  TAddress(/192.168.2.4:1000) with acks: 0 and reading: false
+(TAddress(/192.168.2.2:1000)) acks: 1
+(TAddress(/192.168.2.2:1000)) reading: false
+(TAddress(/192.168.2.3:1000)) PL_Deliver VALUE form  TAddress(/192.168.2.2:1000) with acks: 0 and reading: false
+(TAddress(/192.168.2.2:1000)) PL_Deliver ACK from  TAddress(/192.168.2.2:1000) with acks: 1 and reading: false
+(TAddress(/192.168.2.2:1000)) acks: 2
+(TAddress(/192.168.2.2:1000)) reading: false
+(TAddress(/192.168.2.3:1000)) PL_Deliver VALUE form  TAddress(/192.168.2.7:1000) with acks: 0 and reading: false
+(TAddress(/192.168.2.2:1000)) PL_Deliver ACK from  TAddress(/192.168.2.7:1000) with acks: 2 and reading: false
+(TAddress(/192.168.2.2:1000)) acks: 3
+(TAddress(/192.168.2.2:1000)) reading: false
+(TAddress(/192.168.2.8:1000)) READ: BEB_Broadcasting -> rid: 1 reading: true
+(TAddress(/192.168.2.7:1000)) PL_Deliver VALUE form  TAddress(/192.168.2.3:1000) with acks: 0 and reading: true
+(TAddress(/192.168.2.6:1000)) PL_Deliver ACK from  TAddress(/192.168.2.3:1000) with acks: 0 and reading: true
+(TAddress(/192.168.2.6:1000)) acks: 1
+(TAddress(/192.168.2.6:1000)) reading: true
+(TAddress(/192.168.2.7:1000)) PL_Deliver VALUE form  TAddress(/192.168.2.1:1000) with acks: 0 and reading: true
+(TAddress(/192.168.2.6:1000)) PL_Deliver ACK from  TAddress(/192.168.2.1:1000) with acks: 1 and reading: true
+(TAddress(/192.168.2.6:1000)) acks: 2
+(TAddress(/192.168.2.6:1000)) reading: true
+(TAddress(/192.168.2.7:1000)) PL_Deliver VALUE form  TAddress(/192.168.2.8:1000) with acks: 0 and reading: true
+(TAddress(/192.168.2.6:1000)) PL_Deliver ACK from  TAddress(/192.168.2.8:1000) with acks: 2 and reading: true
+(TAddress(/192.168.2.6:1000)) acks: 3
+(TAddress(/192.168.2.6:1000)) reading: true
+(TAddress(/192.168.2.7:1000)) PL_Deliver VALUE form  TAddress(/192.168.2.5:1000) with acks: 0 and reading: true
+(TAddress(/192.168.2.6:1000)) PL_Deliver ACK from  TAddress(/192.168.2.5:1000) with acks: 3 and reading: true
+(TAddress(/192.168.2.6:1000)) acks: 4
+(TAddress(/192.168.2.6:1000)) reading: true
+(TAddress(/192.168.2.7:1000)) PL_Deliver VALUE form  TAddress(/192.168.2.6:1000) with acks: 0 and reading: true
+HashMap((1,2,Some(-1038318701)), (1,2,Some(-1038318701)), (1,2,Some(-1038318701)), (1,2,Some(-1038318701)), (1,2,Some(-1038318701)))
+1 2 Some(-1038318701)
+(TAddress(/192.168.2.7:1000)) BEB_Broadcast WRITE -> 1, 1, 2, Some(-1038318701)
+(TAddress(/192.168.2.6:1000)) PL_Deliver ACK from  TAddress(/192.168.2.6:1000) with acks: 4 and reading: true
+(TAddress(/192.168.2.6:1000)) acks: 5
+(TAddress(/192.168.2.6:1000)) reading: true
+(TAddress(/192.168.2.6:1000)) AR_Read_Response  -> Some(247983444)
+(TAddress(/192.168.2.7:1000)) PL_Deliver VALUE form  TAddress(/192.168.2.4:1000) with acks: 0 and reading: true
+(TAddress(/192.168.2.6:1000)) PL_Deliver ACK from  TAddress(/192.168.2.4:1000) with acks: 0 and reading: false
+(TAddress(/192.168.2.6:1000)) acks: 1
+(TAddress(/192.168.2.6:1000)) reading: false
+(TAddress(/192.168.2.7:1000)) PL_Deliver VALUE form  TAddress(/192.168.2.2:1000) with acks: 0 and reading: true
+(TAddress(/192.168.2.6:1000)) PL_Deliver ACK from  TAddress(/192.168.2.2:1000) with acks: 1 and reading: false
+(TAddress(/192.168.2.6:1000)) acks: 2
+(TAddress(/192.168.2.6:1000)) reading: false
+(TAddress(/192.168.2.7:1000)) PL_Deliver VALUE form  TAddress(/192.168.2.7:1000) with acks: 0 and reading: true
+(TAddress(/192.168.2.6:1000)) PL_Deliver ACK from  TAddress(/192.168.2.7:1000) with acks: 2 and reading: false
+(TAddress(/192.168.2.6:1000)) acks: 3
+(TAddress(/192.168.2.6:1000)) reading: false
+(TAddress(/192.168.2.3:1000)) Sendind VALUE form TAddress(/192.168.2.4:1000) -> rid: 1 timestamp: 1 wr: 2 value: Some(-1038318701)
+(TAddress(/192.168.2.1:1000)) Sendind VALUE form TAddress(/192.168.2.4:1000) -> rid: 1 timestamp: 1 wr: 2 value: Some(-1038318701)
+(TAddress(/192.168.2.8:1000)) Sendind VALUE form TAddress(/192.168.2.4:1000) -> rid: 1 timestamp: 1 wr: 2 value: Some(-1038318701)
+(TAddress(/192.168.2.5:1000)) Sendind VALUE form TAddress(/192.168.2.4:1000) -> rid: 1 timestamp: 1 wr: 2 value: Some(-1038318701)
+(TAddress(/192.168.2.6:1000)) Sendind VALUE form TAddress(/192.168.2.4:1000) -> rid: 1 timestamp: 1 wr: 2 value: Some(-1038318701)
+(TAddress(/192.168.2.4:1000)) Sendind VALUE form TAddress(/192.168.2.4:1000) -> rid: 1 timestamp: 1 wr: 2 value: Some(-1038318701)
+(TAddress(/192.168.2.2:1000)) Sendind VALUE form TAddress(/192.168.2.4:1000) -> rid: 1 timestamp: 1 wr: 2 value: Some(-1038318701)
+(TAddress(/192.168.2.7:1000)) Sendind VALUE form TAddress(/192.168.2.4:1000) -> rid: 1 timestamp: 1 wr: 2 value: Some(-1038318701)
+(TAddress(/192.168.2.3:1000)) Sendind ACK form TAddress(/192.168.2.3:1000) -> rid: 1
+(TAddress(/192.168.2.1:1000)) Sendind ACK form TAddress(/192.168.2.3:1000) -> rid: 1
+(TAddress(/192.168.2.8:1000)) Sendind ACK form TAddress(/192.168.2.3:1000) -> rid: 1
+(TAddress(/192.168.2.5:1000)) Sendind ACK form TAddress(/192.168.2.3:1000) -> rid: 1
+(TAddress(/192.168.2.6:1000)) Sendind ACK form TAddress(/192.168.2.3:1000) -> rid: 1
+(TAddress(/192.168.2.4:1000)) Sendind ACK form TAddress(/192.168.2.3:1000) -> rid: 1
+(TAddress(/192.168.2.2:1000)) Sendind ACK form TAddress(/192.168.2.3:1000) -> rid: 1
+(TAddress(/192.168.2.7:1000)) Sendind ACK form TAddress(/192.168.2.3:1000) -> rid: 1
+(TAddress(/192.168.2.3:1000)) Sendind VALUE form TAddress(/192.168.2.8:1000) -> rid: 1 timestamp: 2 wr: 3 value: Some(-988758023)
+(TAddress(/192.168.2.1:1000)) Sendind VALUE form TAddress(/192.168.2.8:1000) -> rid: 1 timestamp: 2 wr: 3 value: Some(-988758023)
+(TAddress(/192.168.2.8:1000)) Sendind VALUE form TAddress(/192.168.2.8:1000) -> rid: 1 timestamp: 2 wr: 3 value: Some(-988758023)
+(TAddress(/192.168.2.5:1000)) Sendind VALUE form TAddress(/192.168.2.8:1000) -> rid: 1 timestamp: 2 wr: 3 value: Some(-988758023)
+(TAddress(/192.168.2.6:1000)) Sendind VALUE form TAddress(/192.168.2.8:1000) -> rid: 1 timestamp: 2 wr: 3 value: Some(-988758023)
+(TAddress(/192.168.2.4:1000)) Sendind VALUE form TAddress(/192.168.2.8:1000) -> rid: 1 timestamp: 2 wr: 3 value: Some(-988758023)
+(TAddress(/192.168.2.2:1000)) Sendind VALUE form TAddress(/192.168.2.8:1000) -> rid: 1 timestamp: 2 wr: 3 value: Some(-988758023)
+(TAddress(/192.168.2.7:1000)) Sendind VALUE form TAddress(/192.168.2.8:1000) -> rid: 1 timestamp: 2 wr: 3 value: Some(-988758023)
+(TAddress(/192.168.2.3:1000)) Sendind ACK form TAddress(/192.168.2.7:1000) -> rid: 1
+(TAddress(/192.168.2.1:1000)) Sendind ACK form TAddress(/192.168.2.7:1000) -> rid: 1
+(TAddress(/192.168.2.8:1000)) Sendind ACK form TAddress(/192.168.2.7:1000) -> rid: 1
+(TAddress(/192.168.2.5:1000)) Sendind ACK form TAddress(/192.168.2.7:1000) -> rid: 1
+(TAddress(/192.168.2.6:1000)) Sendind ACK form TAddress(/192.168.2.7:1000) -> rid: 1
+(TAddress(/192.168.2.4:1000)) Sendind ACK form TAddress(/192.168.2.7:1000) -> rid: 1
+(TAddress(/192.168.2.2:1000)) Sendind ACK form TAddress(/192.168.2.7:1000) -> rid: 1
+(TAddress(/192.168.2.7:1000)) Sendind ACK form TAddress(/192.168.2.7:1000) -> rid: 1
+(TAddress(/192.168.2.4:1000)) PL_Deliver VALUE form  TAddress(/192.168.2.3:1000) with acks: 0 and reading: false
+(TAddress(/192.168.2.3:1000)) PL_Deliver ACK from  TAddress(/192.168.2.3:1000) with acks: 0 and reading: false
+(TAddress(/192.168.2.3:1000)) acks: 1
+(TAddress(/192.168.2.3:1000)) reading: false
+(TAddress(/192.168.2.4:1000)) PL_Deliver VALUE form  TAddress(/192.168.2.1:1000) with acks: 0 and reading: false
+(TAddress(/192.168.2.3:1000)) PL_Deliver ACK from  TAddress(/192.168.2.1:1000) with acks: 1 and reading: false
+(TAddress(/192.168.2.3:1000)) acks: 2
+(TAddress(/192.168.2.3:1000)) reading: false
+(TAddress(/192.168.2.4:1000)) PL_Deliver VALUE form  TAddress(/192.168.2.8:1000) with acks: 0 and reading: false
+(TAddress(/192.168.2.3:1000)) PL_Deliver ACK from  TAddress(/192.168.2.8:1000) with acks: 2 and reading: false
+(TAddress(/192.168.2.3:1000)) acks: 3
+(TAddress(/192.168.2.3:1000)) reading: false
+(TAddress(/192.168.2.4:1000)) PL_Deliver VALUE form  TAddress(/192.168.2.5:1000) with acks: 0 and reading: false
+(TAddress(/192.168.2.3:1000)) PL_Deliver ACK from  TAddress(/192.168.2.5:1000) with acks: 3 and reading: false
+(TAddress(/192.168.2.3:1000)) acks: 4
+(TAddress(/192.168.2.3:1000)) reading: false
+(TAddress(/192.168.2.4:1000)) PL_Deliver VALUE form  TAddress(/192.168.2.6:1000) with acks: 0 and reading: false
+HashMap((1,2,Some(-1038318701)), (1,2,Some(-1038318701)), (1,2,Some(-1038318701)), (1,2,Some(-1038318701)), (1,2,Some(-1038318701)))
+1 2 Some(-1038318701)
+(TAddress(/192.168.2.4:1000)) BEB_Broadcast WRITE -> 1, 2, 4, Some(-1285954666)
+(TAddress(/192.168.2.3:1000)) PL_Deliver ACK from  TAddress(/192.168.2.6:1000) with acks: 4 and reading: false
+(TAddress(/192.168.2.3:1000)) acks: 5
+(TAddress(/192.168.2.3:1000)) reading: false
+(TAddress(/192.168.2.3:1000)) AR_Write_Response
+(TAddress(/192.168.2.4:1000)) PL_Deliver VALUE form  TAddress(/192.168.2.4:1000) with acks: 0 and reading: false
+(TAddress(/192.168.2.3:1000)) PL_Deliver ACK from  TAddress(/192.168.2.4:1000) with acks: 0 and reading: false
+(TAddress(/192.168.2.3:1000)) acks: 1
+(TAddress(/192.168.2.3:1000)) reading: false
+(TAddress(/192.168.2.4:1000)) PL_Deliver VALUE form  TAddress(/192.168.2.2:1000) with acks: 0 and reading: false
+(TAddress(/192.168.2.3:1000)) PL_Deliver ACK from  TAddress(/192.168.2.2:1000) with acks: 1 and reading: false
+(TAddress(/192.168.2.3:1000)) acks: 2
+(TAddress(/192.168.2.3:1000)) reading: false
+(TAddress(/192.168.2.4:1000)) PL_Deliver VALUE form  TAddress(/192.168.2.7:1000) with acks: 0 and reading: false
+(TAddress(/192.168.2.3:1000)) PL_Deliver ACK from  TAddress(/192.168.2.7:1000) with acks: 2 and reading: false
+(TAddress(/192.168.2.3:1000)) acks: 3
+(TAddress(/192.168.2.3:1000)) reading: false
+(TAddress(/192.168.2.8:1000)) PL_Deliver VALUE form  TAddress(/192.168.2.3:1000) with acks: 0 and reading: true
+(TAddress(/192.168.2.7:1000)) PL_Deliver ACK from  TAddress(/192.168.2.3:1000) with acks: 0 and reading: true
+(TAddress(/192.168.2.7:1000)) acks: 1
+(TAddress(/192.168.2.7:1000)) reading: true
+(TAddress(/192.168.2.8:1000)) PL_Deliver VALUE form  TAddress(/192.168.2.1:1000) with acks: 0 and reading: true
+(TAddress(/192.168.2.7:1000)) PL_Deliver ACK from  TAddress(/192.168.2.1:1000) with acks: 1 and reading: true
+(TAddress(/192.168.2.7:1000)) acks: 2
+(TAddress(/192.168.2.7:1000)) reading: true
+(TAddress(/192.168.2.8:1000)) PL_Deliver VALUE form  TAddress(/192.168.2.8:1000) with acks: 0 and reading: true
+(TAddress(/192.168.2.7:1000)) PL_Deliver ACK from  TAddress(/192.168.2.8:1000) with acks: 2 and reading: true
+(TAddress(/192.168.2.7:1000)) acks: 3
+(TAddress(/192.168.2.7:1000)) reading: true
+(TAddress(/192.168.2.8:1000)) PL_Deliver VALUE form  TAddress(/192.168.2.5:1000) with acks: 0 and reading: true
+(TAddress(/192.168.2.7:1000)) PL_Deliver ACK from  TAddress(/192.168.2.5:1000) with acks: 3 and reading: true
+(TAddress(/192.168.2.7:1000)) acks: 4
+(TAddress(/192.168.2.7:1000)) reading: true
+(TAddress(/192.168.2.8:1000)) PL_Deliver VALUE form  TAddress(/192.168.2.6:1000) with acks: 0 and reading: true
+HashMap((2,3,Some(-988758023)), (2,3,Some(-988758023)), (2,3,Some(-988758023)), (2,3,Some(-988758023)), (2,3,Some(-988758023)))
+2 3 Some(-988758023)
+(TAddress(/192.168.2.8:1000)) BEB_Broadcast WRITE -> 1, 2, 3, Some(-988758023)
+(TAddress(/192.168.2.7:1000)) PL_Deliver ACK from  TAddress(/192.168.2.6:1000) with acks: 4 and reading: true
+(TAddress(/192.168.2.7:1000)) acks: 5
+(TAddress(/192.168.2.7:1000)) reading: true
+(TAddress(/192.168.2.7:1000)) AR_Read_Response  -> Some(-1038318701)
+(TAddress(/192.168.2.8:1000)) PL_Deliver VALUE form  TAddress(/192.168.2.4:1000) with acks: 0 and reading: true
+(TAddress(/192.168.2.7:1000)) PL_Deliver ACK from  TAddress(/192.168.2.4:1000) with acks: 0 and reading: false
+(TAddress(/192.168.2.7:1000)) acks: 1
+(TAddress(/192.168.2.7:1000)) reading: false
+(TAddress(/192.168.2.8:1000)) PL_Deliver VALUE form  TAddress(/192.168.2.2:1000) with acks: 0 and reading: true
+(TAddress(/192.168.2.7:1000)) PL_Deliver ACK from  TAddress(/192.168.2.2:1000) with acks: 1 and reading: false
+(TAddress(/192.168.2.7:1000)) acks: 2
+(TAddress(/192.168.2.7:1000)) reading: false
+(TAddress(/192.168.2.8:1000)) PL_Deliver VALUE form  TAddress(/192.168.2.7:1000) with acks: 0 and reading: true
+(TAddress(/192.168.2.7:1000)) PL_Deliver ACK from  TAddress(/192.168.2.7:1000) with acks: 2 and reading: false
+(TAddress(/192.168.2.7:1000)) acks: 3
+(TAddress(/192.168.2.7:1000)) reading: false
+(TAddress(/192.168.2.3:1000)) Sendind ACK form TAddress(/192.168.2.4:1000) -> rid: 1
+(TAddress(/192.168.2.1:1000)) Sendind ACK form TAddress(/192.168.2.4:1000) -> rid: 1
+(TAddress(/192.168.2.8:1000)) Sendind ACK form TAddress(/192.168.2.4:1000) -> rid: 1
+(TAddress(/192.168.2.5:1000)) Sendind ACK form TAddress(/192.168.2.4:1000) -> rid: 1
+(TAddress(/192.168.2.6:1000)) Sendind ACK form TAddress(/192.168.2.4:1000) -> rid: 1
+(TAddress(/192.168.2.4:1000)) Sendind ACK form TAddress(/192.168.2.4:1000) -> rid: 1
+(TAddress(/192.168.2.2:1000)) Sendind ACK form TAddress(/192.168.2.4:1000) -> rid: 1
+(TAddress(/192.168.2.7:1000)) Sendind ACK form TAddress(/192.168.2.4:1000) -> rid: 1
+(TAddress(/192.168.2.3:1000)) Sendind ACK form TAddress(/192.168.2.8:1000) -> rid: 1
+(TAddress(/192.168.2.1:1000)) Sendind ACK form TAddress(/192.168.2.8:1000) -> rid: 1
+(TAddress(/192.168.2.8:1000)) Sendind ACK form TAddress(/192.168.2.8:1000) -> rid: 1
+(TAddress(/192.168.2.5:1000)) Sendind ACK form TAddress(/192.168.2.8:1000) -> rid: 1
+(TAddress(/192.168.2.6:1000)) Sendind ACK form TAddress(/192.168.2.8:1000) -> rid: 1
+(TAddress(/192.168.2.4:1000)) Sendind ACK form TAddress(/192.168.2.8:1000) -> rid: 1
+(TAddress(/192.168.2.2:1000)) Sendind ACK form TAddress(/192.168.2.8:1000) -> rid: 1
+(TAddress(/192.168.2.7:1000)) Sendind ACK form TAddress(/192.168.2.8:1000) -> rid: 1
+(TAddress(/192.168.2.4:1000)) PL_Deliver ACK from  TAddress(/192.168.2.3:1000) with acks: 0 and reading: false
+(TAddress(/192.168.2.4:1000)) acks: 1
+(TAddress(/192.168.2.4:1000)) reading: false
+(TAddress(/192.168.2.4:1000)) PL_Deliver ACK from  TAddress(/192.168.2.1:1000) with acks: 1 and reading: false
+(TAddress(/192.168.2.4:1000)) acks: 2
+(TAddress(/192.168.2.4:1000)) reading: false
+(TAddress(/192.168.2.4:1000)) PL_Deliver ACK from  TAddress(/192.168.2.8:1000) with acks: 2 and reading: false
+(TAddress(/192.168.2.4:1000)) acks: 3
+(TAddress(/192.168.2.4:1000)) reading: false
+(TAddress(/192.168.2.4:1000)) PL_Deliver ACK from  TAddress(/192.168.2.5:1000) with acks: 3 and reading: false
+(TAddress(/192.168.2.4:1000)) acks: 4
+(TAddress(/192.168.2.4:1000)) reading: false
+(TAddress(/192.168.2.4:1000)) PL_Deliver ACK from  TAddress(/192.168.2.6:1000) with acks: 4 and reading: false
+(TAddress(/192.168.2.4:1000)) acks: 5
+(TAddress(/192.168.2.4:1000)) reading: false
+(TAddress(/192.168.2.4:1000)) AR_Write_Response
+(TAddress(/192.168.2.4:1000)) PL_Deliver ACK from  TAddress(/192.168.2.4:1000) with acks: 0 and reading: false
+(TAddress(/192.168.2.4:1000)) acks: 1
+(TAddress(/192.168.2.4:1000)) reading: false
+(TAddress(/192.168.2.4:1000)) PL_Deliver ACK from  TAddress(/192.168.2.2:1000) with acks: 1 and reading: false
+(TAddress(/192.168.2.4:1000)) acks: 2
+(TAddress(/192.168.2.4:1000)) reading: false
+(TAddress(/192.168.2.4:1000)) PL_Deliver ACK from  TAddress(/192.168.2.7:1000) with acks: 2 and reading: false
+(TAddress(/192.168.2.4:1000)) acks: 3
+(TAddress(/192.168.2.4:1000)) reading: false
+(TAddress(/192.168.2.8:1000)) PL_Deliver ACK from  TAddress(/192.168.2.3:1000) with acks: 0 and reading: true
+(TAddress(/192.168.2.8:1000)) acks: 1
+(TAddress(/192.168.2.8:1000)) reading: true
+(TAddress(/192.168.2.8:1000)) PL_Deliver ACK from  TAddress(/192.168.2.1:1000) with acks: 1 and reading: true
+(TAddress(/192.168.2.8:1000)) acks: 2
+(TAddress(/192.168.2.8:1000)) reading: true
+(TAddress(/192.168.2.8:1000)) PL_Deliver ACK from  TAddress(/192.168.2.8:1000) with acks: 2 and reading: true
+(TAddress(/192.168.2.8:1000)) acks: 3
+(TAddress(/192.168.2.8:1000)) reading: true
+(TAddress(/192.168.2.8:1000)) PL_Deliver ACK from  TAddress(/192.168.2.5:1000) with acks: 3 and reading: true
+(TAddress(/192.168.2.8:1000)) acks: 4
+(TAddress(/192.168.2.8:1000)) reading: true
+(TAddress(/192.168.2.8:1000)) PL_Deliver ACK from  TAddress(/192.168.2.6:1000) with acks: 4 and reading: true
+(TAddress(/192.168.2.8:1000)) acks: 5
+(TAddress(/192.168.2.8:1000)) reading: true
+(TAddress(/192.168.2.8:1000)) AR_Read_Response  -> Some(-988758023)
+(TAddress(/192.168.2.8:1000)) PL_Deliver ACK from  TAddress(/192.168.2.4:1000) with acks: 0 and reading: false
+(TAddress(/192.168.2.8:1000)) acks: 1
+(TAddress(/192.168.2.8:1000)) reading: false
+(TAddress(/192.168.2.8:1000)) PL_Deliver ACK from  TAddress(/192.168.2.2:1000) with acks: 1 and reading: false
+(TAddress(/192.168.2.8:1000)) acks: 2
+(TAddress(/192.168.2.8:1000)) reading: false
+(TAddress(/192.168.2.8:1000)) PL_Deliver ACK from  TAddress(/192.168.2.7:1000) with acks: 2 and reading: false
+(TAddress(/192.168.2.8:1000)) acks: 3
+(TAddress(/192.168.2.8:1000)) reading: false
