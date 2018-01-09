@@ -1,6 +1,5 @@
-# Assignment 3
+### Assignment 2: From Best Effort to Causal Order Reliable Broadcast ###
 
-From Best Effort to Causal Order Reliable Broadcast
 This is the first programming assignment where you will have to build and reuse multiple components.
 Starting bottom-up, you will first have to implement best effort broadcast, then reliable broadcast and finally causal order reliable broadcast.
 Mind that passing each component check will give you a partial grade and therefore you will need to pass all checks to get the full grade for this programming assignment.

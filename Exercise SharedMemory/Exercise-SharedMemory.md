@@ -1,6 +1,4 @@
-# Assignment 4
-
-## Implementing an Atomic N-N register ##
+### Assignment 3: Implementing an Atomic N-N register ###
 In this programming assignment you will have to complete the implementation of an atomic register that supports multiple writers and readers.
 
 When you are done you simply have to export your notebook and then upload it in the “Programming Exercise 3” page.
