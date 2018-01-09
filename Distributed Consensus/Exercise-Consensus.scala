@@ -51,16 +51,18 @@ class Paxos(paxosInit: Init[Paxos]) extends ComponentDefinition {
   var acceptedValue: Option[Any] = None;
 
   def propose() = {
-   /* 
-   INSERT YOUR CODE HERE 
-   */
+    if(!decided){
+      round = round + 1;
+      numOfAccepts = 0;
+      promises = ListBuffer.empty;
+      trigger(BEB_Broadcast(Prepare(round,rank)) -> beb);
+    }
   }
 
   consensus uponEvent {
     case C_Propose(value) => handle {
-   /* 
-   INSERT YOUR CODE HERE 
-   */
+      proposedValue = Some(value);
+      propose();
     }
   }
 
@@ -90,9 +92,10 @@ class Paxos(paxosInit: Init[Paxos]) extends ComponentDefinition {
 
     case PL_Deliver(src, prepAck: Promise) => handle {
       if ((round, rank) == prepAck.promiseBallot) {
-        /* 
-           INSERT YOUR CODE HERE 
-        */
+        promises += ((prepAck.acceptedBallot, prepAck.acceptedValue));
+        if(promises.count == (numProcesses + 1) / 2){
+          /*todo: here*/
+        }
       }
     };
 
