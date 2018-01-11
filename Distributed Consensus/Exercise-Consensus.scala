@@ -25,6 +25,7 @@ import se.sics.kompics.timer.{ScheduleTimeout, Timeout, Timer}
   //HINT: After you execute the latter implicit ordering you can compare tuples as such within your component implementation:
   (1,2) <= (1,4);
 
+
 class Paxos(paxosInit: Init[Paxos]) extends ComponentDefinition {
 
   //Port Subscriptions for Paxos
@@ -55,6 +56,7 @@ class Paxos(paxosInit: Init[Paxos]) extends ComponentDefinition {
       round = round + 1;
       numOfAccepts = 0;
       promises = ListBuffer.empty;
+      println(s"($rank -> $numProcesses) triggering BEB_Broadcast(Prepare(round $round, rank $rank))");
       trigger(BEB_Broadcast(Prepare(round,rank)) -> beb);
     }
   }
@@ -68,23 +70,37 @@ class Paxos(paxosInit: Init[Paxos]) extends ComponentDefinition {
 
 
   beb uponEvent {
-
+ 
     case BEB_Deliver(src, prep: Prepare) => handle {
-   /* 
-   INSERT YOUR CODE HERE 
-   */
+      if(promisedBallot < prep.proposalBallot){
+          promisedBallot = prep.proposalBallot;
+          println(s"($rank -> $numProcesses) triggering PL_Send($src, Promise(promisedBallot $promisedBallot, acceptedBallot $acceptedBallot, acceptedValue $acceptedValue))");
+          trigger(PL_Send(src, Promise(promisedBallot, acceptedBallot, acceptedValue))-> plink);
+      } else {
+          println(s"($rank -> $numProcesses) triggering PL_Send($src, Nack(prep.proposalBallot $prep.proposalBallot))");
+          trigger(PL_Send(src, Nack(prep.proposalBallot))-> plink);
+      }
     };
 
     case BEB_Deliver(src, acc: Accept) => handle {
-   /* 
-   INSERT YOUR CODE HERE 
-   */
+      if(promisedBallot <= acc.acceptBallot){
+          acceptedBallot = acc.acceptBallot;
+          promisedBallot = acceptedBallot;
+          acceptedValue = Some(acc.proposedValue);
+          println(s"($rank -> $numProcesses) triggering PL_Send($src, Accepted(acceptBallot $acc.acceptBallot))");
+          trigger(PL_Send(src, Accepted(acc.acceptBallot))-> plink);
+      } else {
+          println(s"($rank -> $numProcesses) triggering PL_Send($src, Nack(acceptBallot $acc.acceptBallot))");
+          trigger(PL_Send(src, Nack(acc.acceptBallot))-> plink);
+      }
     };
 
     case BEB_Deliver(src, dec : Decided) => handle {
-   /* 
-   INSERT YOUR CODE HERE 
-   */
+      if(!decided){
+          println(s"($rank -> $numProcesses) triggering Decided(dec.decidedValue $dec.decidedValue)");
+          trigger(C_Decide(dec.decidedValue) -> consensus);
+          decided = true;
+      }
     }
   }
 
@@ -93,25 +109,30 @@ class Paxos(paxosInit: Init[Paxos]) extends ComponentDefinition {
     case PL_Deliver(src, prepAck: Promise) => handle {
       if ((round, rank) == prepAck.promiseBallot) {
         promises += ((prepAck.acceptedBallot, prepAck.acceptedValue));
-        if(promises.count == (numProcesses + 1) / 2){
-          /*todo: here*/
+        if(promises.size > (numProcesses + 1) / 2){
+          var (maxBallot, value) = promises.maxBy { case (key, value) => key };
+          if (value.isDefined) {
+            proposedValue = value
+          }
+          println(s"($rank -> $numProcesses) triggering BEB_Broadcast(Accept((round $round, rank $rank), proposedValue $proposedValue))");
+          trigger(BEB_Broadcast(Accept((round, rank), proposedValue.get)) -> beb);
         }
       }
     };
 
     case PL_Deliver(src, accAck: Accepted) => handle {
       if ((round, rank) == accAck.acceptedBallot) {
-        /* 
-           INSERT YOUR CODE HERE 
-        */
+        numOfAccepts = numOfAccepts + 1;
+        if(numOfAccepts == (numProcesses + 1) / 2){
+          println(s"($rank -> $numProcesses) triggering BEB_Broadcast(Decided(proposedValue $proposedValue))");
+          trigger(BEB_Broadcast(Decided(proposedValue)) -> beb);
+        }
       }
     };
 
     case PL_Deliver(src, nack: Nack) => handle {
       if ((round, rank) == nack.ballot) {
-        /* 
-           INSERT YOUR CODE HERE 
-        */
+        propose()
       }
     }
   }
